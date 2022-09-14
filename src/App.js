@@ -4,7 +4,7 @@ import CartContext from "./Context/CartContext";
 import OffcanvasContext from "./Context/OffcanvasContext";
 import ManageAllOrders from "./Pages/Account/LoginModal/ManageAllOrders/ManageAllOrders";
 import OrderHistory from "./Pages/Account/LoginModal/OrderHistory.js/OrderHistory";
-// import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
+import Dashboard from "./Pages/Dashboard/Dashboard";
 import Home from "./Pages/Home/Home/Home";
 import ProductDetail from "./Pages/Home/ProductDetail/ProductDetail";
 import AdminRoute from "./Pages/PrivateRoute/AdminRoute";
@@ -20,8 +20,8 @@ function App() {
         <Route path="/home" element={<Home/>} />
         <Route path="/products/:id" element={<ProductDetail/>} />
        
-        {/* <Route path="/dashboard/*" element={<Dashboard/> */}
-        {/* } />  */}
+        <Route path="/dashboard/*" element={<Dashboard/>} />
+        
          
 
        

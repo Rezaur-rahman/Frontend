@@ -14,7 +14,6 @@ const ShowMyOrder = ({myPd}) => {
     const onCloseModal = () => setOpen(false);
 
     const handleRatingSubmit=(id)=>{
-        alert(id)
         fetch(`http://localhost:8080/products/${id}`,{
             method:'PUT',
             headers:{

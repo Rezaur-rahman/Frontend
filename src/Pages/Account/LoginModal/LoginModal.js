@@ -121,8 +121,8 @@ const LoginModal = () => {
                             <hr />
                            <div className='mt-5'>
                            
-                            <button  className='mt-5 border border-slate-700 h-8 w-48'>Dashboard</button> <br />
-                            {/* onClick={()=>navigate('/dashboard/profile')}/ */}
+                            <button onClick={()=>navigate('/dashboard/my-orders')}  className='mt-5 border border-slate-700 h-8 w-48'>Dashboard</button> <br />
+                 
                             <button className='mt-5 border border-slate-700 h-8 w-48' onClick={logOut}>Log Out</button>
                            </div>
 

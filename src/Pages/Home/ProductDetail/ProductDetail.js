@@ -76,12 +76,12 @@ const ProductDetail = () => {
                 </div>
                 <div className='col-span-2 ml-9 md:ml-14 '>
                     <h3 className='text-2xl mt-4 mb-2'>{productInfo?.name}</h3>
-                    <Rating
-                         initialRating={productInfo.rating}
-                        //  symbol="fa fa-star fa-2x"
-                       
-                         readonly
-                        />
+                    <Rating className='d-flex justify-content-center'
+                            emptySymbol="far fa-star"
+                            fullSymbol="fas fa-star"
+                      initialRating={productInfo.rating}
+                      readonly
+                    />
                     <p className='text-sm mt-2 mb-4 text-slate-600 '>{productInfo?.description}</p>
                     <h5 className='mt-4 mb-1 font-semibold text-xl'>&#2547;{productInfo?.price} <del className='text-sm text-slate-600'>{productInfo?.oldprice}</del> </h5>
                     <h4>
