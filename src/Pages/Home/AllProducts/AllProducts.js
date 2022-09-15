@@ -1,6 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import './AllProducts.css'
+import { BallTriangle } from 'react-loader-spinner';
+
 
 import SingleProduct from '../SingleProduct/SingleProduct';
 import {  faSort } from '@fortawesome/free-solid-svg-icons';
@@ -16,6 +18,8 @@ const AllProducts = () => {
         const data=await result.json();
         setAllProducts(data);
         setFilteredProducts(data);
+
+        
        }
        fetchProduct();
     },[])
@@ -30,9 +34,19 @@ const AllProducts = () => {
    
     }
 
-
    if(!allProducts){
-       return <h2>loading...</h2>
+       return  <div className='flex justify-center mx-auto my-40'>
+         <BallTriangle
+       height={100}
+       width={100}
+       radius={5}
+       color="#4fa94d"
+       ariaLabel="ball-triangle-loading"
+       wrapperClass={{}}
+       wrapperStyle=""
+       visible={true}
+       /> 
+       </div>
    }
 
   

@@ -21,7 +21,8 @@ const PdInfo = ({product}) => {
         }
     }
   return (
-    <div className='px-3 py-1 bg-slate-300 border grid grid-cols-4'>
+    <div className='px-3 py-1 bg-slate-300 border grid grid-cols-5'>
+       <h3>{product.key}</h3>
        <h3>{product.name}</h3>
        <h3>{product.price}</h3>
        <h3>{product.rating? product.rating : 'not rating yet'}</h3>

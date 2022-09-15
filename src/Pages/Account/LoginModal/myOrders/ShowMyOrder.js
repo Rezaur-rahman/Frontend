@@ -13,28 +13,28 @@ const ShowMyOrder = ({myPd}) => {
     const onOpenModal = () => setOpen(true);
     const onCloseModal = () => setOpen(false);
 
-    const handleRatingSubmit=(id)=>{
-        fetch(`http://localhost:8080/products/${id}`,{
-            method:'PUT',
-            headers:{
-                'content-type':'application/json'
-            },
-            body:JSON.stringify({rating,feedback})
+    // const handleRatingSubmit=(id)=>{
+    //     fetch(`http://localhost:8080/products/${id}`,{
+    //         method:'PUT',
+    //         headers:{
+    //             'content-type':'application/json'
+    //         },
+    //         body:JSON.stringify({rating,feedback})
         
-          }).then(res=>res.json()).then(data=>{
-            if(data.acknowledged){
-                alert('rating done')
-                onCloseModal();
-            }
-        })
-    }
+    //       }).then(res=>res.json()).then(data=>{
+    //         if(data.acknowledged){
+    //             alert('rating done')
+    //             onCloseModal();
+    //         }
+    //     })
+    // }
  
     return (
         <div className="grid grid-cols-3 my-3 text-center border-2 border-black ">
             <h2 className='py-5 px-5 '> Product ID : {myPd.productId}</h2>
             <h2 className='py-5 px-5 '> Product Name : {myPd.productName}</h2>
             <h2 className='py-5 px-5 '>Quantity : {myPd.productQuantity}</h2>
-            <button onClick={onOpenModal} className='bg-yellow-400 w-28 h-9 mt-5'>Write a review</button>
+            {/* <button onClick={onOpenModal} className='bg-yellow-400 w-28 h-9 mt-5'>Write a review</button>
             <Modal  open={open} onClose={onCloseModal} center>
         <h2>Write a Review</h2>
         <br /> <hr /> 
@@ -51,7 +51,7 @@ const ShowMyOrder = ({myPd}) => {
 
         <textarea onBlur={(e)=>setFeedback(e.target.value)} className='border-2' name="" id="" cols="50" rows="8"></textarea> <br /><br />
         <button className='bg-yellow-400' onClick={()=>handleRatingSubmit(myPd.productId)}>Submit</button>
-      </Modal>
+      </Modal> */}
 
         </div>
     );
