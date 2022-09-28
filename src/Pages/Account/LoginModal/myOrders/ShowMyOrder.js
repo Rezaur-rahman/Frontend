@@ -14,7 +14,7 @@ const ShowMyOrder = ({myPd}) => {
     const onCloseModal = () => setOpen(false);
 
     // const handleRatingSubmit=(id)=>{
-    //     fetch(`http://localhost:8080/products/${id}`,{
+    //     fetch(`https://uiu-canteen.herokuapp.com/products/${id}`,{
     //         method:'PUT',
     //         headers:{
     //             'content-type':'application/json'
@@ -28,12 +28,16 @@ const ShowMyOrder = ({myPd}) => {
     //         }
     //     })
     // }
+
+    console.log(myPd);
  
     return (
         <div className="grid grid-cols-3 my-3 text-center border-2 border-black ">
             <h2 className='py-5 px-5 '> Product ID : {myPd.productId}</h2>
             <h2 className='py-5 px-5 '> Product Name : {myPd.productName}</h2>
             <h2 className='py-5 px-5 '>Quantity : {myPd.productQuantity}</h2>
+          
+
             {/* <button onClick={onOpenModal} className='bg-yellow-400 w-28 h-9 mt-5'>Write a review</button>
             <Modal  open={open} onClose={onCloseModal} center>
         <h2>Write a Review</h2>

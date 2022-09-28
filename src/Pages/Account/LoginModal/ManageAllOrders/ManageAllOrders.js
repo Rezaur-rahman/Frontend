@@ -3,7 +3,7 @@ import ShowAllOrders from './ShowAllOrders';
 const ManageAllOrders = () => {
     const [manageAllOrders,setManageAllOrders]=useState();
     useEffect(()=>{
-        const url='http://localhost:8080/orders';
+        const url='https://uiu-canteen.herokuapp.com/orders';
 
         const loadAllOrders=async()=>{
             const res=await fetch(url);

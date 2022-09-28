@@ -5,7 +5,7 @@ const useIdentity = () => {
     let init=0;
     useEffect(()=>{
         const fetchProduct=async()=>{
-         const result=await fetch('http://localhost:8080/products');
+         const result=await fetch('https://uiu-canteen.herokuapp.com/products');
          const data=await result.json();
          setProducts(data);
        

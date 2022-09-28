@@ -8,7 +8,7 @@ const OrderHistory = () => {
     const {user}=useAuth();
     const [myOrders,setMyOrders]=useState();
     useEffect(()=>{
-        const url=`http://localhost:8080/myorders?email=${user?.email}`;
+        const url=`https://uiu-canteen.herokuapp.com/myorders?email=${user?.email}`;
         const loadMyOrders=async()=>{
             const res=await fetch(url);
             const data=await res.json();

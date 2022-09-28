@@ -5,7 +5,7 @@ const PdInfo = ({product}) => {
     const handleProductDelete=(productId)=>{
 
         if(window.confirm('are you sure you want to delete this product?')===true){
-            fetch('http://localhost:8080/products',{
+            fetch('https://uiu-canteen.herokuapp.com/products',{
                 method:'DELETE',
                 headers:{
                     'content-type':'application/json'

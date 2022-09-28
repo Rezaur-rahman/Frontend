@@ -5,13 +5,13 @@ import {  faPhone } from '@fortawesome/free-solid-svg-icons'
 
 const Topbar = () => {
     return (
-        <div className='flex justify-around bg-yellow-400 items-center py-0.5'>
+        <div className='flex justify-around bg-orange-400 items-center py-0.5'>
              <div>
-                 <h6 className='text-xs font-semibold'>Serving Farm Fresh Foods</h6>
+                 <h6 className='text-xs font-semibold'>Get Free Delivery Within 15 Minutes</h6>
              </div>
              <div>
              <FontAwesomeIcon icon={faPhone} className="text-xs "/> &nbsp;
-             <span className='text-xs '>01614821673(10am-10pm)</span>
+             <span className='text-xs '>016777753(10am-10pm)</span>
              </div>
         </div>
     );

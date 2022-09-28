@@ -49,12 +49,13 @@ const CartModal = () => {
   const orderInfo={
        email:customerEmail,
        items:orderProducts,
-       totalPrice
+       totalPrice,
+       status:'pending'
   }
 
   console.log(orderInfo);
 
-  fetch('http://localhost:8080/orders',{
+  fetch('https://uiu-canteen.herokuapp.com/orders',{
     method:'POST',
     headers:{
         'content-type':'application/json'

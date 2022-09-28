@@ -10,6 +10,7 @@ const useFirebase=()=>{
     const [error,setError]=useState('');
     const [loading,setLoading]=useState(true);
     const [admin,setAdmin]=useState(false);
+    const [seller,setSeller]=useState(false);
     const auth=getAuth();
     const googleProvider=new GoogleAuthProvider();
 
@@ -21,8 +22,8 @@ const useFirebase=()=>{
         .then(res=>{
             // (res.user);
             const data=res.user;
-           setUser({...data,role:'user'});
-            dataToFetch({...data,role:'user'},'PUT')
+           setUser({...data});
+            dataToFetch({...data},'PUT')
             setError('');
         }).catch(error=>{
             // (error.message);
@@ -63,9 +64,24 @@ const useFirebase=()=>{
 
 
    useEffect(()=>{
-       fetch(`http://localhost:8080/users/${user?.email}`)
+       fetch(`https://uiu-canteen.herokuapp.com/users/${user?.email}`)
        .then(res=>res.json())
-       .then(data=>setAdmin(data?.admin));
+       .then(data=>{
+        console.log(data)
+        if(data?.admin){
+            setAdmin(data?.admin);
+            setSeller(false);
+        }
+        else if(data?.seller) {
+            setSeller(data?.seller);
+            setAdmin(false);
+        }
+        else{
+            setSeller(false);
+            setAdmin(false);
+        }
+        
+       });
    },[user?.email])
 
     const logOut=()=>{
@@ -98,7 +114,7 @@ const useFirebase=()=>{
 
 
     const dataToFetch=(inputValue,methodType)=>{
-        fetch('http://localhost:8080/users',{
+        fetch('https://uiu-canteen.herokuapp.com/users',{
             method:methodType,
             headers:{
                 'content-type':'application/json'
@@ -108,7 +124,7 @@ const useFirebase=()=>{
      }
 
     return{
-        user,admin,signInUsingGoogle,error,loading,logOut,registerNewUser,signInUser
+        user,admin,seller,signInUsingGoogle,error,loading,logOut,registerNewUser,signInUser
     }
     
 

@@ -7,7 +7,7 @@ import DisplayOrderedItems from './DisplayOrderedItems';
 const ShowAllOrders = ({order}) => {
     const handleRemoveOrder=(orderId)=>{
         if(window.confirm('are you sure you want to delete this order?')===true){
-            fetch('http://localhost:8080/orders',{
+            fetch('https://uiu-canteen.herokuapp.com/orders',{
                 method:'DELETE',
                 headers:{
                     'content-type':'application/json'
@@ -40,7 +40,8 @@ const ShowAllOrders = ({order}) => {
             <div className="pl-5 flex justify-around">
                 <h3>{
                    order.totalPrice
-                    } Taka</h3>     
+                    } Taka</h3>   
+                
                 <FontAwesomeIcon onClick={()=> handleRemoveOrder(order._id)} style={{color:'red',fontSize:'35px',cursor:'pointer'}} icon={faTrash} />
         
             </div>

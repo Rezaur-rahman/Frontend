@@ -20,7 +20,7 @@ const ProductDetail = () => {
 
 
     useEffect(()=>{
-       const url= `http://localhost:8080/products/${id}`;
+       const url= `https://uiu-canteen.herokuapp.com/products/${id}`;
        const fetchDetails=async()=>{
            
            const res=await fetch(url);
@@ -97,7 +97,7 @@ const ProductDetail = () => {
                              
                         </div>
                         
-                        <button className='my-9  bg-yellow-400 w-80 h-12 text-md font-semibold border-2 border-black' onClick={()=>handleAddToCart()}>Add to Cart</button>
+                        <button className='my-9  bg-orange-400 w-80 h-12 text-md font-semibold border-2 border-black' onClick={()=>handleAddToCart()}>Add to Cart</button>
                     </div>
                   
                 </div>

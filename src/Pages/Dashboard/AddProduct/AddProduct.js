@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { BallTriangle } from 'react-loader-spinner';
+import useAuth from '../../../Hooks/useAuth';
 import useIdentity from '../../../Hooks/useIdentity';
 
 const AddProduct = () => {
@@ -8,7 +9,8 @@ const AddProduct = () => {
     const API_KEY="19f04dc40bf672a82c1b32f4e6260bc4";
     const [loading,setLoading]=useState(false);
     const {prokey}=useIdentity();
-
+    const {user}=useAuth();
+   
     const handleProductInfo=e=>{
       const name=e.target.name;
       const value=e.target.value;
@@ -16,7 +18,7 @@ const AddProduct = () => {
       newInputValue[name]=value;
       setNewProductInfo(newInputValue);
 
-  
+         console.log(user);
     }
 
     const handleImg=e=>{
@@ -51,12 +53,12 @@ const AddProduct = () => {
        
       setLoading(true)
         const productData={
-            ...newProductInfo,image:imgUrl,key:parseInt(Math.random()*342938+1)
+            ...newProductInfo,image:imgUrl,key:parseInt(Math.random()*342938+1),seller:user.displayName
         }
 
         console.log('finally',prokey);
 
-   {     fetch('http://localhost:8080/products',{
+   {     fetch('https://uiu-canteen.herokuapp.com/products',{
             method:'POST',
             headers:{
                 'content-type':'application/json'

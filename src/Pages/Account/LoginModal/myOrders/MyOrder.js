@@ -7,7 +7,7 @@ const MyOrder = ({order}) => {
 
     const cancelMyOrder=(orderId)=>{
         if(window.confirm('are you sure you want to delete this order?')===true){
-            fetch('http://localhost:8080/orders',{
+            fetch('https://uiu-canteen.herokuapp.com/orders',{
                 method:'DELETE',
                 headers:{
                     'content-type':'application/json'
@@ -32,9 +32,9 @@ const MyOrder = ({order}) => {
             }
               </div>
 
-             <div className="h-auto py-14 mx-3 border-2 border-black">
-             <h2 className="text-center text-lg">Total : {order.totalPrice} </h2>
-             
+             <div className="h-auto py-14 mx-3 px-5 border-2 border-black">
+             <h2 className="text-center text-sm">Total : {order.totalPrice} </h2> <br/>
+             <h3 className='text-xs'>Status : {order.status} </h3>  
           
              </div>
              <div className='cursor-pointer text-2xl border border-black h-12 mx-auto text-center w-12' onClick={()=>cancelMyOrder(order._id)}>
