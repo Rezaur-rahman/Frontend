@@ -103,12 +103,12 @@ const LoginModal = () => {
                             <p className='my-1.5 text-center'>Already Registered? <Link to='/' onClick={()=>setShowReg(false)} className="text-blue-500 underline decoration-2"> LogIn Now!</Link> </p>
                             </div>
                             }
-                          <hr />  <h5 className='text-center mt-1 text-sm' id='login-alternative'>OR LOGIN WITH</h5>
+                          {/* <hr />  <h5 className='text-center mt-1 text-sm' id='login-alternative'>OR LOGIN WITH</h5>
                             
                             <button className='items-center bg-yellow-500 rounded flex mx-auto mb-1 shadow-lg'>
                             <img className="w-9 py-1 pl-3" src={googleLogo} alt="google logo" onClick={()=>signInUsingGoogle(location,navigate)}  />   
                             <span className=' text-white px-5 py-1  text-sm ' onClick={()=>signInUsingGoogle(location,navigate)} >LogIn With Google</span>
-                            </button>
+                            </button> */}
                            
                         </div>:
                         <div className='mt-3 text-center'>
